@@ -33,12 +33,21 @@ See [Install Locally](#install-locally) for a quickstart
 
 ```json
 {
- "jobRunID": "278c97ffadb54a5bbb93cfec5f7b5503",
- "data": {
-  "USD": 164.02,
-  "result": 164.02
- },
- "statusCode": 200
+  "jobRunID": 0,
+  "data": [
+    {
+      "time_open": "2022-01-15T00:00:00Z",
+      "time_close": "2022-01-15T23:59:59Z",
+      "open": 25.751994528298454,
+      "high": 26.16412239921477,
+      "low": 25.242393374307294,
+      "close": 25.242393374307294,
+      "volume": 866061408,
+      "market_cap": 9786004084
+    }
+  ],
+  "result": 9786004084,
+  "statusCode": 200
 }
 ```
 
@@ -69,7 +78,7 @@ yarn start
 ## Call the external adapter/API server
 
 ```bash
-curl -X POST -H "content-type:application/json" "http://localhost:8080/" --data '{ "id": 0, "data": { "from": "ETH", "to": "USD" } }'
+curl -X POST -H "content-type:application/json" "http://localhost:8080/" --data '{ "id": 0, "data": { "cpkey": "link-chainlink"} }'
 ```
 
 ## Docker
